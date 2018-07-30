@@ -3,7 +3,8 @@ A web app to manage products, supporting all CRUD operations, built with Angular
 
 # Function
 This app is used to manage products.
-![image](/src/assets/productlistafteredit.png)
+
+<kbd>![image](/src/assets/productlistafteredit.png)</kbd>
 
 # Setup Locally
 ## 1. RESTful API

@@ -21,7 +21,7 @@ npm start
 Access http://localhost:12080/ in web browser, enjoy!
 
 # Portfolio
-Read portfolio [Game Store(Angular)](http://jojozhuang.github.io/portfolio/game-store-angular/) to learn the main functions of this CRUD app.
+Read portfolio [Game Store(Angular)](http://jojozhuang.github.io/portfolio/game-store-angular/) to learn the main functions of this Angular app.
 
 # Tutorial
-Read tutorial [Building Web Application with Angular](http://jojozhuang.github.io/tutorial/angular/building-web-application-with-angular/) to learn how this CRUD app is built.
+Read tutorial [Building Web Application with Angular](http://jojozhuang.github.io/tutorial/angular/building-web-application-with-angular/) to learn how this Angular app is built.

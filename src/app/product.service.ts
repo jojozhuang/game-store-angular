@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 import { Product, ResponseResult } from './models';
 
 @Injectable()
 export class ProductService {
   //URL for CRUD operations
-  baseUrl = "http://localhost:8080/";
+  baseUrl = environment.apiUrl;
   apiUrl = this.baseUrl + "api/products";
   uploadUrl = this.baseUrl + "api/upload";
   

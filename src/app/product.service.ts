@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
@@ -23,7 +24,7 @@ export class ProductService {
   //Create product
   createProduct(product: Product): Observable<any> {
     return this.http.post(this.apiUrl, product, {observe: 'response'})
-           .map(success => success.status)
+           .pipe(map(success => success.status))
   }
   //Fetch product by id
   getProductById(pid: number): Observable<Product> {
@@ -32,12 +33,12 @@ export class ProductService {
   //Update product
   updateProduct(product: Product): Observable<any> {
     return this.http.put(this.apiUrl + "/" + product.id, product, {observe: 'response'})
-           .map(success => success.status)
+           .pipe(map(success => success.status))
   }
   //Delete product	
   deleteProductById(pid: number): Observable<any> {
     return this.http.delete(this.apiUrl +"/"+ pid, {observe: 'response'})
-           .map(success => success.status)
+           .pipe(map(success => success.status))
   }
   //Upload image
   upload(fileToUpload: any): Observable<ResponseResult> {

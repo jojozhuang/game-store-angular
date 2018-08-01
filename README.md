@@ -24,6 +24,9 @@ npm start
 ```
 Access http://localhost:12080/ in web browser, enjoy!
 
+# Deployment
+Follow the tutorial [Deploying Game Store Angular to Netlify](http://jojozhuang.github.io/tutorial/angular/deploying-game-store-angular-to-netlify/) to deploy this app to Netlify.
+
 # Portfolio
 Read portfolio [Game Store(Angular)](http://jojozhuang.github.io/portfolio/game-store-angular/) to learn the main functions of this Angular app.
 

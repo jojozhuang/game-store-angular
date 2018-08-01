@@ -4,7 +4,7 @@ A web app to manage products, supporting all CRUD operations, built with Angular
 # Function
 This app is used to manage products.
 
-<kbd>![image](/src/assets/productlistafteredit.png)</kbd>
+<kbd>![image](/src/assets/productlist.png)</kbd>
 
 # Demo
 The [Live Demo](https://game-store-angular.netlify.com/) is hosted on Netlify.

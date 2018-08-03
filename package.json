@@ -29,8 +29,11 @@
     "@angular/router": "^5.2.11",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.7",
+    "hoek": "^5.0.3",
+    "lodash": "^4.17.10",
     "ngx-bootstrap": "^2.0.5",
     "rxjs": "^5.5.11",
+    "ssri": "^6.0.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
@@ -43,7 +46,7 @@
     "codelyzer": "^4.4.2",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
-    "karma": "~1.7.0",
+    "karma": "^2.0.5",
     "karma-chrome-launcher": "~2.1.1",
     "karma-cli": "~1.0.1",
     "karma-coverage-istanbul-reporter": "^1.4.3",

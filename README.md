@@ -7,7 +7,11 @@ This app is used to manage products.
 <kbd>![image](/src/assets/productlist.png)</kbd>
 
 # Demo
-The [Live Demo](https://game-store-angular.netlify.com/) is hosted on Netlify.
+Two available demos:
+* `Live Demo on Netlify:` <a href="https://game-store-angular.netlify.com/" target="\_blank">https://game-store-angular.netlify.com/</a>
+* `Live Demo on Azure:` <a href="https://game-store-angular.azurewebsites.net/" target="\_blank">https://game-store-angular.azurewebsites.net/</a>
+
+*Note: The demo websites may be slow when you access them for the first time. Be patient!*
 
 # Setup Locally
 ## 1. RESTful API

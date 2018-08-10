@@ -8,7 +8,7 @@ This app is used to manage products.
 
 # Demo
 Three available demos:
-* `Live Demo on GitHub Page:` <a href="https://jojozhuang.github.io/game-store-angular/"
+* `Live Demo on GitHub Page:` <a href="https://jojozhuang.github.io/game-store-angular/" target="\_blank">https://jojozhuang.github.io/game-store-angular/</a>
 * `Live Demo on Netlify:` <a href="https://game-store-angular.netlify.com/" target="\_blank">https://game-store-angular.netlify.com/</a>
 * `Live Demo on Azure:` <a href="https://game-store-angular.azurewebsites.net/" target="\_blank">https://game-store-angular.azurewebsites.net/</a>
 

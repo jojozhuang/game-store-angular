@@ -7,7 +7,8 @@ This app is used to manage products.
 <kbd>![image](/src/assets/productlist.png)</kbd>
 
 # Demo
-Two available demos:
+Three available demos:
+* `Live Demo on GitHub Page:` <a href="https://jojozhuang.github.io/game-store-angular/"
 * `Live Demo on Netlify:` <a href="https://game-store-angular.netlify.com/" target="\_blank">https://game-store-angular.netlify.com/</a>
 * `Live Demo on Azure:` <a href="https://game-store-angular.azurewebsites.net/" target="\_blank">https://game-store-angular.azurewebsites.net/</a>
 
@@ -29,6 +30,8 @@ npm start
 Access http://localhost:12080/ in web browser, enjoy!
 
 # Deployment
+Follow the tutorial [Deploying Static Web App to GitHub Pages using Travis-CI](https://jojozhuang.github.io/tutorial/githubpages/deploying-static-web-app-to-github-pages-using-travis-ci/) to deploy this app to GitHub Pages.
+
 Follow the tutorial [Deploying Game Store Angular App to Netlify](https://jojozhuang.github.io/tutorial/angular/deploying-game-store-angular-app-to-netlify/) to deploy this app to Netlify.
 
 # Portfolio

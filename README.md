@@ -30,9 +30,9 @@ npm start
 Access http://localhost:12080/ in web browser, enjoy!
 
 # Deployment
-Follow the tutorial [Deploying Static Web App to GitHub Pages using Travis-CI](https://jojozhuang.github.io/tutorial/githubpages/deploying-static-web-app-to-github-pages-using-travis-ci/) to deploy this app to GitHub Pages.
-
 Follow the tutorial [Deploying Game Store Angular App to Netlify](https://jojozhuang.github.io/tutorial/angular/deploying-game-store-angular-app-to-netlify/) to deploy this app to Netlify.
+
+Follow the tutorial [Continuously Deploy Angular App to GitHub Pages using Travis-CI](https://jojozhuang.github.io/tutorial/angular/continuously-deploy-angular-app-to-github-pages-using-travis-ci/) to deploy this app to GitHub Pages.
 
 # Portfolio
 Read portfolio [Game Store(Angular)](https://jojozhuang.github.io/portfolio/game-store-angular/) to learn the main functions of this Angular app.

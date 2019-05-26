@@ -10,7 +10,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "test" : "ECHO \"Test is ignored\"",
+    "test" : "echo \"Test is ignored\"",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

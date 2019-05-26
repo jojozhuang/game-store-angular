@@ -21,7 +21,7 @@
           <td>{{product.productName}}</td>
           <td>${{product.price}}</td>
           <td><img src="{{product.image}}" class="img-thumbnail" width="80" height="80"></td>
-          <td><a class="btn btn-success" [routerLink]="['/productadd', product.id ]">Edit</a>&nbsp;<a class="btn btn-danger" (click)="deleteProduct({ event:$event, id: product.id })">Delete</a></td>
+          <td><a class="btn btn-success" [routerLink]="['/productadd', product.id ]">Edit</a>&nbsp;<button type="button" class="btn btn-danger" (click)="deleteProduct({ event:$event, id: product.id })">Delete</button></td>
         </tr>
      </tbody>
   </table>

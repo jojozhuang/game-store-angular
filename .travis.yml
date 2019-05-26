@@ -9,6 +9,14 @@ cache:
     - node_modules
 
 deploy:
+  - provider: heroku
+    skip_cleanup: true
+    keep-history: true
+    api-key:
+      secure: $HEROKU_API_KEY
+    app: game-store-angular
+    on:
+      branch: master
   - provider: pages
     skip_cleanup: true
     keep-history: true
@@ -21,13 +29,5 @@ deploy:
       - npm install
     script:
       - yarn build --base-href https://jojozhuang.github.io/game-store-angular/
-    on:
-      branch: master
-  - provider: heroku
-    skip_cleanup: true
-    keep-history: true
-    api-key:
-      secure: $HEROKU_API_KEY
-    app: game-store-angular
     on:
       branch: master

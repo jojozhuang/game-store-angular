@@ -1,33 +1,20 @@
 language: node_js
 node_js:
-  - "9"
-dist: trusty
+  - "8"
 sudo: false
+
+branches:
+  only:
+  - master
 
 cache:
   directories:
     - node_modules
 
 deploy:
-  - provider: heroku
-    skip_cleanup: true
-    keep-history: true
-    api-key:
-      secure: $HEROKU_API_KEY
-    app: game-store-angular
-    on:
-      branch: master
-  - provider: pages
-    skip_cleanup: true
-    keep-history: true
-    github_token: $GITHUB_TOKEN
-    local_dir: dist/
-    before_script:
-      - npm install -g @angular/cli
-    install:
-      - npm install -g yarn
-      - npm install
-    script:
-      - yarn build --base-href https://jojozhuang.github.io/game-store-angular/
-    on:
-      branch: master
+  provider: heroku
+  skip_cleanup: true
+  keep-history: true
+  api-key:
+    secure: $HEROKU_API_KEY
+  app: game-store-angular

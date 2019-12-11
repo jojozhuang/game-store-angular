@@ -34,9 +34,11 @@
     "diff": "^4.0.1",
     "express": "^4.17.1",
     "hoek": "^5.0.4",
+    "mem": "^6.0.1",
     "ngx-bootstrap": "^2.0.5",
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.0.0-rc.0",
+    "serialize-javascript": "^2.1.2",
     "ssri": "^6.0.1",
     "tslib": "^1.10.0",
     "zone.js": "^0.8.29"

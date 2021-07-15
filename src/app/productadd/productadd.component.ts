@@ -70,8 +70,8 @@ export class ProductaddComponent implements OnInit {
   }
 
   //Image upload
-  @ViewChild("fileInput") fileInput;
-  @ViewChild("productImage") productImage;
+  @ViewChild("fileInput", { static: false }) fileInput;
+  @ViewChild("productImage", { static: false }) productImage;
 
   filechanged(event): void {
     var name = this.fileInput.nativeElement.files[0].name;

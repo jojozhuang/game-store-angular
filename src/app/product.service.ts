@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -13,9 +12,9 @@ export class ProductService {
   baseUrl = environment.apiUrl;
   apiUrl = this.baseUrl + "api/products";
   uploadUrl = this.baseUrl + "api/upload";
-  
+
   //Create constructor to get Http instance
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
   }
   //Fetch all products
   getProducts(): Observable<Product[]> {
@@ -29,13 +28,13 @@ export class ProductService {
   //Fetch product by id
   getProductById(pid: number): Observable<Product> {
     return this.http.get<Product>(this.apiUrl + "/" + pid)
-  }	
+  }
   //Update product
   updateProduct(product: Product): Observable<any> {
     return this.http.put(this.apiUrl + "/" + product.id, product, {observe: 'response'})
            .pipe(map(success => success.status))
   }
-  //Delete product	
+  //Delete product
   deleteProductById(pid: number): Observable<any> {
     return this.http.delete(this.apiUrl +"/"+ pid, {observe: 'response'})
            .pipe(map(success => success.status))

@@ -38,7 +38,7 @@
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.0.0-rc.0",
     "serialize-javascript": "^2.1.2",
-    "ssri": "^6.0.1",
+    "ssri": "^6.0.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

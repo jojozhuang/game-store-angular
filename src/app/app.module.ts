@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatInputModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AlertModule } from 'ngx-bootstrap';
+import { AlertModule } from 'ngx-bootstrap/alert';
 import { ProductService } from './product.service';
 
 import { AppComponent } from './app.component';

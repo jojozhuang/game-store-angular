@@ -3,3 +3,4 @@ e2e/*
 node_modules/*
 *.spec.ts
 typings.d.ts
+cypress/*

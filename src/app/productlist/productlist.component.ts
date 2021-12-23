@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from './../product.service';
+
+import { ProductService } from '../product.service';
+import { Product } from '../models';
 
 @Component({
   selector: 'app-productlist',
   templateUrl: './productlist.component.html',
-  styleUrls: ['./productlist.component.css'],
+  styleUrls: ['./productlist.component.scss'],
 })
 export class ProductListComponent implements OnInit {
   constructor(private service: ProductService) {}
-  products;
-  statusCode: number;
-  errmsg: string;
+  products: Product[] = [];
+  statusCode = 0;
+  errmsg = '';
 
   ngOnInit() {
     this.getProducts();
@@ -18,8 +20,8 @@ export class ProductListComponent implements OnInit {
   //Fetch all products
   getProducts() {
     this.service.getProducts().subscribe(
-      (data) => (this.products = data),
-      (error) => {
+      (data: Product[]) => (this.products = data),
+      (error: any) => {
         this.statusCode = error.statusCode; // eslint-disable-line
         this.errmsg = error.message; // eslint-disable-line
       },
@@ -34,7 +36,7 @@ export class ProductListComponent implements OnInit {
           this.statusCode = successCode;
           this.getProducts();
         },
-        (error) => {
+        (error: any) => {
           this.statusCode = error.statusCode; // eslint-disable-line
           this.errmsg = error.message; // eslint-disable-line
         },

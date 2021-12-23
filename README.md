@@ -40,7 +40,7 @@ git clone https://github.com/jojozhuang/game-store-angular.git
 cd game-store-angular
 npm install
 ng serve
-npm run dev
+npm start
 ```
 
 Access http://localhost:12080/ in web browser, enjoy!

@@ -1,17 +1,22 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { HttpClientModule } from '@angular/common/http';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { ProductAddComponent } from "./productadd.component";
+import { ProductService } from '../product.service';
+import { ProductAddComponent } from './productadd.component';
 
-describe("ProductaddComponent", () => {
+describe('ProductAddComponent', () => {
   let component: ProductAddComponent;
   let fixture: ComponentFixture<ProductAddComponent>;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
+        imports: [HttpClientModule, RouterTestingModule.withRoutes([])],
+        providers: [ProductService],
         declarations: [ProductAddComponent],
       }).compileComponents();
-    })
+    }),
   );
 
   beforeEach(() => {
@@ -20,7 +25,7 @@ describe("ProductaddComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

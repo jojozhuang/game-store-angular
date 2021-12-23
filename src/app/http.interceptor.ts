@@ -35,7 +35,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next
       .handle(customReq)
       .do((ev: HttpEvent<any>) => {
-        console.log(customReq);
+        //console.log(customReq);
         /*if (ev instanceof HttpResponse) {
                     //console.error(ev);
                     //console.log('processing response', ev);
@@ -43,16 +43,16 @@ export class ErrorInterceptor implements HttpInterceptor {
       })
       .catch((response) => {
         const respResult = new ResponseResult(200, '');
-        console.error(response);
+        //console.error(response);
         if (response instanceof HttpErrorResponse) {
           const err = response.message || JSON.stringify(response.error);
           respResult.statusCode = response.status;
           respResult.message = `${response.statusText || ''} Details: ${err}`;
         } else {
           respResult.statusCode = 400;
-          respResult.message = response.message ? response.message : response.toString();
+          respResult.message = response.message ? response.message : response.toString(); // eslint-disable-line
         }
-        console.error(respResult.message);
+        //console.error(respResult.message);
         return _throw(respResult);
       });
   }

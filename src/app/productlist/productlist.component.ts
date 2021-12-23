@@ -20,23 +20,23 @@ export class ProductListComponent implements OnInit {
     this.service.getProducts().subscribe(
       (data) => (this.products = data),
       (error) => {
-        this.statusCode = error.statusCode;
-        this.errmsg = error.message;
+        this.statusCode = error.statusCode; // eslint-disable-line
+        this.errmsg = error.message; // eslint-disable-line
       },
     );
   }
 
-  deleteProduct(event) {
+  deleteProduct(productId: number) {
     if (window.confirm('Are you sure to delete this product?')) {
       //console.log(event.id);
-      this.service.deleteProductById(event.id).subscribe(
+      this.service.deleteProductById(productId).subscribe(
         (successCode: number) => {
           this.statusCode = successCode;
           this.getProducts();
         },
         (error) => {
-          this.statusCode = error.statusCode;
-          this.errmsg = error.message;
+          this.statusCode = error.statusCode; // eslint-disable-line
+          this.errmsg = error.message; // eslint-disable-line
         },
       );
     }

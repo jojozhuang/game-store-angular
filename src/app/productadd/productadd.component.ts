@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { ProductService } from './../product.service';
+import { Product } from '../models';
 
 @Component({
   selector: 'app-productadd',
@@ -13,7 +14,8 @@ export class ProductAddComponent implements OnInit {
   statusCode: number;
   errmsg: string;
   filename: string;
-  id;
+  id: string;
+  selectedFile: File;
 
   //Create form
   productForm = new FormGroup({
@@ -30,10 +32,9 @@ export class ProductAddComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     //console.log(this.id);
-    if (this.id != null) {
-      this.service.getProductById(this.id).subscribe(
+    if (this.id) {
+      this.service.getProductById(Number(this.id)).subscribe(
         (product) => {
-          //console.log(product);
           this.productForm.setValue({
             id: product.id,
             productName: product.productName,
@@ -42,8 +43,8 @@ export class ProductAddComponent implements OnInit {
           });
         },
         (error) => {
-          this.statusCode = error.statusCode;
-          this.errmsg = error.message;
+          this.statusCode = error.statusCode; // eslint-disable-line
+          this.errmsg = error.message; // eslint-disable-line
         },
       );
     }
@@ -55,31 +56,30 @@ export class ProductAddComponent implements OnInit {
       return; //Validation failed, exit from method.
     }
     //Form is valid, now perform create or update
-    const product = this.productForm.value;
-    console.log(product);
-    if (product.id == null || product.id == '') {
+    const product = this.productForm.value as Product;
+    if (!product.id) {
       //Create product
       product.id = 0;
       this.service.createProduct(product).subscribe(
-        (successCode) => {
+        (successCode: number) => {
           this.statusCode = successCode;
-          this.router.navigate(['productlist']);
+          void this.router.navigate(['productlist']);
         },
         (error) => {
-          this.statusCode = error.statusCode;
-          this.errmsg = error.message;
+          this.statusCode = error.statusCode; // eslint-disable-line
+          this.errmsg = error.message; // eslint-disable-line
         },
       );
     } else {
       //Update product
       this.service.updateProduct(product).subscribe(
-        (successCode) => {
+        (successCode: number) => {
           this.statusCode = successCode;
-          this.router.navigate(['productlist']);
+          void this.router.navigate(['productlist']);
         },
         (error) => {
-          this.statusCode = error.statusCode;
-          this.errmsg = error.message;
+          this.statusCode = error.statusCode; // eslint-disable-line
+          this.errmsg = error.message; // eslint-disable-line
         },
       );
     }
@@ -90,25 +90,20 @@ export class ProductAddComponent implements OnInit {
   @ViewChild('productImage') productImage;
 
   filechanged(event): void {
-    const name = this.fileInput.nativeElement.files[0].name;
-    //console.log(name);
-    this.filename = name;
+    this.selectedFile = event.target.files[0]; // eslint-disable-line
+    this.filename = this.selectedFile.name;
   }
 
   upload(): void {
-    const fi = this.fileInput.nativeElement;
-    if (fi.files && fi.files[0]) {
-      const fileToUpload = fi.files[0];
-      this.service.upload(fileToUpload).subscribe(
+    if (this.selectedFile) {
+      this.service.upload(this.selectedFile).subscribe(
         (res) => {
-          //console.log("fileupload:" + res.statusCode);
-          //console.log("fileupload:" + res.message);
           this.productForm.patchValue({ image: res.message });
-          this.productImage.src = res.message;
+          this.productImage.src = res.message; // eslint-disable-line
         },
         (error) => {
-          this.statusCode = error.statusCode;
-          this.errmsg = error.message;
+          this.statusCode = error.statusCode; // eslint-disable-line
+          this.errmsg = error.message; // eslint-disable-line
         },
       );
     }

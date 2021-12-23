@@ -1,4 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -12,7 +13,7 @@ describe('ProductAddComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientModule, RouterTestingModule.withRoutes([])],
+        imports: [HttpClientModule, ReactiveFormsModule, RouterTestingModule],
         providers: [ProductService],
         declarations: [ProductAddComponent],
       }).compileComponents();

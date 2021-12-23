@@ -11,7 +11,7 @@
     "start": "node server.js",
     "dev": "ng serve",
     "build": "ng build --configuration production",
-    "test": "ng test --browsers=ChromeHeadless",
+    "test": "ng test --browsers=ChromeHeadless --watch=false",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "e2e": "ng e2e"
   },

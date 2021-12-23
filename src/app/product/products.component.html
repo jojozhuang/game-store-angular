@@ -22,7 +22,7 @@
         <td>${{ product.price }}</td>
         <td><img src="{{ product.image }}" class="img-thumbnail" width="80" height="80" /></td>
         <td>
-          <button type="button" class="btn btn-success" [routerLink]="['/productadd', product.id]">Edit</button
+          <button type="button" class="btn btn-success" [routerLink]="['/product', product.id]">Edit</button
           ><button type="button" class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
         </td>
       </tr>

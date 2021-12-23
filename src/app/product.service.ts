@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
@@ -40,7 +40,7 @@ export class ProductService {
   //Upload image
   upload(fileToUpload: any): Observable<ResponseResult> {
     const input = new FormData();
-    input.append('file', fileToUpload);
+    input.append('file', fileToUpload); // eslint-disable-line
 
     return this.http.post<ResponseResult>(this.uploadUrl, input);
   }

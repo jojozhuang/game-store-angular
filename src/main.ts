@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -11,4 +10,4 @@ if (environment.production) {
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .catch((err) => console.log(err)); // eslint-disable-line
+  .catch((err) => console.error(err)); // eslint-disable-line

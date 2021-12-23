@@ -8,53 +8,42 @@ import {
   HttpErrorResponse,
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { _throw } from 'rxjs/observable/throw';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { ResponseResult } from './models';
 
-/**
- * Intercepts the HTTP responses, and in case that an error/exception is thrown, handles it
- * and extract the relevant information of it.
- */
 @Injectable()
-export class ErrorInterceptor implements HttpInterceptor {
-  /**
-   * Intercepts an outgoing HTTP request, executes it and handles any error that could be triggered in execution.
-   * @see HttpInterceptor
-   * @param request the outgoing HTTP request
-   * @param next a HTTP request handler
-   */
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // add a custom header
-    const customReq = request.clone({
-      //headers: request.headers.set('Content-Type', 'application/json')
-    });
-    //return next.handle(request);
-    return next
-      .handle(customReq)
-      .do((ev: HttpEvent<any>) => {
-        //console.log(customReq);
-        /*if (ev instanceof HttpResponse) {
+export class ErrorHttpInterceptor implements HttpInterceptor {
+  // eslint-disable-next-line
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    return next.handle(req).pipe(
+      tap(
+        (event) => {
+          //console.log(customReq);
+          /*if (ev instanceof HttpResponse) {
                     //console.error(ev);
                     //console.log('processing response', ev);
                 }*/
-      })
-      .catch((response) => {
-        const respResult = new ResponseResult(200, '');
-        //console.error(response);
-        if (response instanceof HttpErrorResponse) {
-          const err = response.message || JSON.stringify(response.error);
-          respResult.statusCode = response.status;
-          respResult.message = `${response.statusText || ''} Details: ${err}`;
-        } else {
-          respResult.statusCode = 400;
-          respResult.message = response.message ? response.message : response.toString(); // eslint-disable-line
-        }
-        //console.error(respResult.message);
-        return _throw(respResult);
-      });
+        },
+        (response) => {
+          const respResult = new ResponseResult(200, '');
+          //console.error(response);
+          if (response instanceof HttpErrorResponse) {
+            const err = response.message || JSON.stringify(response.error);
+            respResult.statusCode = response.status;
+            respResult.message = `${response.statusText || ''} Details: ${err}`;
+          } else {
+            respResult.statusCode = 400;
+            respResult.message = response.message ? response.message : response.toString(); // eslint-disable-line
+          }
+          //console.error(respResult.message);
+          return respResult;
+        },
+      ),
+    );
   }
 }
 
@@ -63,6 +52,6 @@ export class ErrorInterceptor implements HttpInterceptor {
  */
 export const ErrorInterceptorProvider = {
   provide: HTTP_INTERCEPTORS,
-  useClass: ErrorInterceptor,
+  useClass: ErrorHttpInterceptor,
   multi: true,
 };

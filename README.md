@@ -2,7 +2,7 @@
 
 A web app for managing products, built with Angular and RESTful API.
 
-<kbd>![image](/src/assets/productlist.png)</kbd>
+<kbd>![image](/src/assets/products.png)</kbd>
 
 # Function
 
@@ -40,10 +40,30 @@ git clone https://github.com/jojozhuang/game-store-angular.git
 cd game-store-angular
 npm install
 ng serve
-npm run dev
+npm start
 ```
 
 Access http://localhost:12080/ in web browser, enjoy!
+
+# Test
+
+## 1. Unit Test
+
+```sh
+npm run test
+```
+
+## 2. e2e Test
+
+Run the following command to open a `Cypress` standalone app in its own window.
+
+```sh
+npx cypress open
+```
+
+In the Cypress app, click `Run n integration specs` button.
+
+- https://armno.medium.com/setting-up-cypress-for-an-angular-project-92dfa2e2caef
 
 # Deployment
 

@@ -2,15 +2,15 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { ProductService } from './../product.service';
+import { ProductService } from '../product.service';
 import { Product } from '../models';
 
 @Component({
-  selector: 'app-productadd',
-  templateUrl: './productadd.component.html',
-  styleUrls: ['./productadd.component.scss'],
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss'],
 })
-export class ProductAddComponent implements OnInit {
+export class ProductComponent implements OnInit {
   statusCode = 0;
   errmsg = '';
   filename = '';
@@ -63,7 +63,7 @@ export class ProductAddComponent implements OnInit {
       this.service.createProduct(product).subscribe(
         (successCode: number) => {
           this.statusCode = successCode;
-          void this.router.navigate(['productlist']);
+          void this.router.navigate(['products']);
         },
         (error: any) => {
           this.statusCode = error.statusCode; // eslint-disable-line
@@ -75,7 +75,7 @@ export class ProductAddComponent implements OnInit {
       this.service.updateProduct(product).subscribe(
         (successCode: number) => {
           this.statusCode = successCode;
-          void this.router.navigate(['productlist']);
+          void this.router.navigate(['products']);
         },
         (error: any) => {
           this.statusCode = error.statusCode; // eslint-disable-line

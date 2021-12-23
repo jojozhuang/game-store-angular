@@ -13,7 +13,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test --browsers=ChromeHeadless --watch=false",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "e2e": "ng e2e"
+    "e2e": "npx cypress open"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +28,6 @@
     "bootstrap": "^4.6.1",
     "express": "^4.17.2",
     "ngx-bootstrap": "^7.1.0",
-    "rxjs": "^7.4.0",
     "rxjs-compat": "^6.6.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

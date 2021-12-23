@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatInputModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,31 +11,31 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { ProductService } from './product.service';
 
 import { AppComponent } from './app.component';
-import { MainpageComponent } from './mainpage/mainpage.component';
+import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProductaddComponent } from './productadd/productadd.component';
-import { ProductlistComponent } from './productlist/productlist.component';
+import { ProductAddComponent } from './productadd/productadd.component';
+import { ProductListComponent } from './productlist/productlist.component';
 import { ErrorInterceptorProvider } from './http.interceptor';
 
 const appRoutes: Routes = [
-  { path: '', component: MainpageComponent },
-  { path: 'mainpage', component: MainpageComponent },
-  { path: 'productlist', component: ProductlistComponent },
-  { path: 'productadd', component: ProductaddComponent },
-  { path: 'productadd/:id', component: ProductaddComponent },
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'productlist', component: ProductListComponent },
+  { path: 'productadd', component: ProductAddComponent },
+  { path: 'productadd/:id', component: ProductAddComponent },
   // otherwise redirect to home
-  {path: '**', redirectTo: ''}
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainpageComponent,
+    HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ProductaddComponent,
-    ProductlistComponent
+    ProductAddComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,9 +45,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatTableModule,
     MatInputModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
   ],
   providers: [ProductService, ErrorInterceptorProvider],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

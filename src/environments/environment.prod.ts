@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://gamestore-api.herokuapp.com/',
+  apiUrl: 'https://game-store-springboot.herokuapp.com/',
 };

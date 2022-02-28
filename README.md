@@ -17,10 +17,10 @@ This application is used to manage products. It implements all CRUD operations. 
 
 Three available demos:
 
-- `Live Demo on GitHub Page:` <a href="https://jojozhuang.github.io/game-store-angular/" target="\_blank">https://jojozhuang.github.io/game-store-angular/</a>
 - `Live Demo on Heroku:` <a href="https://game-store-angular.herokuapp.com/" target="\_blank">https://game-store-angular.herokuapp.com/</a>
 - `Live Demo on Netlify:` <a href="https://game-store-angular.netlify.com/" target="\_blank">https://game-store-angular.netlify.com/</a>
 - `Live Demo on Azure:` <a href="https://game-store-angular.azurewebsites.net/" target="\_blank">https://game-store-angular.azurewebsites.net/</a>
+- `Live Demo on GitHub Page:` <a href="https://jojozhuang.github.io/game-store-angular/" target="\_blank">https://jojozhuang.github.io/game-store-angular/</a>
 
 _Note: The demo websites may be slow when you access them for the first time. Be patient!_
 
@@ -30,6 +30,7 @@ _Note: The demo websites may be slow when you access them for the first time. Be
 
 Setup server to host RESTful API with Spring Boot or ASP.NET Core, see below.
 
+- https://github.com/jojozhuang/game-store-springboot
 - https://github.com/jojozhuang/restful-api-springboot
 - https://github.com/jojozhuang/restful-api-aspnet
 
@@ -59,6 +60,12 @@ Run the following command to open a `Cypress` standalone app in its own window.
 
 ```sh
 npx cypress open
+```
+
+Or run
+
+```sh
+npm run e2e
 ```
 
 In the Cypress app, click `Run n integration specs` button.

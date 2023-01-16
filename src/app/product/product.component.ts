@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { ProductService } from '../product.service';
@@ -18,14 +18,14 @@ export class ProductComponent implements OnInit {
   selectedFile: File;
 
   //Create form
-  productForm = new FormGroup({
-    id: new FormControl(''),
-    productName: new FormControl('', Validators.compose([Validators.required, Validators.minLength(3)])),
-    price: new FormControl(
+  productForm = new UntypedFormGroup({
+    id: new UntypedFormControl(''),
+    productName: new UntypedFormControl('', Validators.compose([Validators.required, Validators.minLength(3)])),
+    price: new UntypedFormControl(
       '0',
       Validators.compose([Validators.required, Validators.min(0), Validators.max(2147483647)]),
     ),
-    image: new FormControl(this.service.baseUrl + 'images/default.png'),
+    image: new UntypedFormControl(this.service.baseUrl + 'images/default.png'),
   });
 
   constructor(private service: ProductService, private router: Router, private route: ActivatedRoute) {}

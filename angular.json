@@ -141,7 +141,7 @@
           }
         },
         "cypress-run": {
-          "builder": "@briebug/cypress-schematic:cypress",
+          "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "game-store-angular:serve"
           },
@@ -152,7 +152,7 @@
           }
         },
         "cypress-open": {
-          "builder": "@briebug/cypress-schematic:cypress",
+          "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "game-store-angular:serve",
             "watch": true,
@@ -165,7 +165,7 @@
           }
         },
         "e2e": {
-          "builder": "@briebug/cypress-schematic:cypress",
+          "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "game-store-angular:serve",
             "watch": true,

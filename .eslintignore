@@ -1,5 +1,7 @@
+.angular/*
 dist/*
 e2e/*
+coverage/*
 node_modules/*
 *.spec.ts
 typings.d.ts

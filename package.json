@@ -13,7 +13,9 @@
     "build-netlify": "ng build --configuration netlify",
     "build-render": "ng build --configuration render",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --browsers=ChromeHeadless --watch=false",
+    "test": "ng test",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "test-coverage": "ng test --karma-config=karma.conf.js --no-watch --code-coverage",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "e2e": "npx cypress open"
   },
@@ -53,7 +55,7 @@
     "karma-coverage": "2.2.0",
     "karma-jasmine": "4.0.0",
     "karma-jasmine-html-reporter": "1.7.0",
-    "prettier": "2.8.1",
+    "prettier": "2.8.3",
     "typescript": "4.9.4"
   },
   "engines": {

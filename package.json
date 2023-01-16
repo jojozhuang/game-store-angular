@@ -10,6 +10,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production",
+    "build-netlify": "ng build --configuration netlify",
+    "build-render": "ng build --configuration render",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --browsers=ChromeHeadless --watch=false",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",

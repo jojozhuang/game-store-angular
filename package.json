@@ -45,7 +45,7 @@
     "@types/node": "^12.20.46",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
-    "cypress": "latest",
+    "cypress": "7.0.0",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-prettier": "^4.0.0",

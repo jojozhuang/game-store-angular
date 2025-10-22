@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -13,10 +13,10 @@ describe('ProductComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientModule, ReactiveFormsModule, RouterTestingModule],
-        providers: [ProductService],
-        declarations: [ProductComponent],
-      }).compileComponents();
+    declarations: [ProductComponent],
+    imports: [ReactiveFormsModule, RouterTestingModule],
+    providers: [ProductService, provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
     }),
   );
 

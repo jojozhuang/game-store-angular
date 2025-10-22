@@ -15,10 +15,10 @@ import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './product/products.component';
 import { ErrorInterceptorProvider } from './http.interceptor';
 
-@NgModule({ declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, ProductComponent, ProductsComponent],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        ReactiveFormsModule,
-        BrowserAnimationsModule,
-        AlertModule.forRoot(),
-        AppRoutingModule], providers: [ProductService, ErrorInterceptorProvider, provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, ProductComponent, ProductsComponent],
+  bootstrap: [AppComponent],
+  imports: [BrowserModule, ReactiveFormsModule, BrowserAnimationsModule, AlertModule.forRoot(), AppRoutingModule],
+  providers: [ProductService, ErrorInterceptorProvider, provideHttpClient(withInterceptorsFromDi())],
+})
 export class AppModule {}

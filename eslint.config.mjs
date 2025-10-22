@@ -56,7 +56,7 @@ export default defineConfig([globalIgnores([
             prefix: "ng",
             style: "camelCase",
         }],
-
+        "@angular-eslint/prefer-standalone": "off",
         "@typescript-eslint/unbound-method": ["error", {
             ignoreStatic: true,
         }],

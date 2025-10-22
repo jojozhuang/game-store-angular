@@ -36,6 +36,8 @@ Setup server to host RESTful API with Spring Boot or ASP.NET Core, see below.
 
 ## 2. Angular App
 
+Clone the repo and start it locally. Run with node version `v20.19.5`.
+
 ```bash
 git clone https://github.com/jojozhuang/game-store-angular.git
 cd game-store-angular

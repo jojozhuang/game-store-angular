@@ -28,7 +28,11 @@ export class ProductComponent implements OnInit {
     image: new UntypedFormControl(this.service.baseUrl + 'images/default.png'),
   });
 
-  constructor(private service: ProductService, private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private service: ProductService,
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {}
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id') || '';
     //console.log(this.id);

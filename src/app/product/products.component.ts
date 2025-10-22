@@ -4,9 +4,10 @@ import { ProductService } from '../product.service';
 import { Product } from '../models';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss'],
+    selector: 'app-products',
+    templateUrl: './products.component.html',
+    styleUrls: ['./products.component.scss'],
+    standalone: false
 })
 export class ProductsComponent implements OnInit {
   private readonly service = inject(ProductService);

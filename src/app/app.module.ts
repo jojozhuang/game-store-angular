@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-
-import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { MatTableModule, MatInputModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,8 +22,6 @@ import { ErrorInterceptorProvider } from './http.interceptor';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    //MatTableModule,
-    //MatInputModule,
     AlertModule.forRoot(),
     AppRoutingModule,
   ],

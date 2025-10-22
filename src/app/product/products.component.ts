@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 
 import { ProductService } from '../product.service';
 import { Product } from '../models';
@@ -9,7 +9,8 @@ import { Product } from '../models';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  constructor(private service: ProductService) {}
+  private readonly service = inject(ProductService);
+
   products: Product[] = [];
   statusCode = 0;
   errmsg = '';
@@ -21,7 +22,7 @@ export class ProductsComponent implements OnInit {
   getProducts() {
     this.service.getProducts().subscribe(
       (data: Product[]) => (this.products = data),
-      (error: any) => {
+      (error: any) => { // eslint-disable-line
         this.statusCode = error.statusCode; // eslint-disable-line
         this.errmsg = error.message; // eslint-disable-line
       },
@@ -36,7 +37,7 @@ export class ProductsComponent implements OnInit {
           this.statusCode = successCode;
           this.getProducts();
         },
-        (error: any) => {
+        (error: any) => { // eslint-disable-line
           this.statusCode = error.statusCode; // eslint-disable-line
           this.errmsg = error.message; // eslint-disable-line
         },

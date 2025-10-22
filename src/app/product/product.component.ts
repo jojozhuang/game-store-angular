@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { ProductService } from '../product.service';
 import { Product } from '../models';
@@ -11,6 +11,10 @@ import { Product } from '../models';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
+  private readonly service = inject(ProductService);
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
+
   statusCode = 0;
   errmsg = '';
   filename = '';
@@ -28,11 +32,6 @@ export class ProductComponent implements OnInit {
     image: new UntypedFormControl(this.service.baseUrl + 'images/default.png'),
   });
 
-  constructor(
-    private service: ProductService,
-    private router: Router,
-    private route: ActivatedRoute,
-  ) {}
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id') || '';
     //console.log(this.id);
@@ -46,7 +45,7 @@ export class ProductComponent implements OnInit {
             image: product.image,
           });
         },
-        (error: any) => {
+        (error: any) => { // eslint-disable-line
           this.statusCode = error.statusCode; // eslint-disable-line
           this.errmsg = error.message; // eslint-disable-line
         },
@@ -69,7 +68,7 @@ export class ProductComponent implements OnInit {
           this.statusCode = successCode;
           void this.router.navigate(['products']);
         },
-        (error: any) => {
+        (error: any) => { // eslint-disable-line
           this.statusCode = error.statusCode; // eslint-disable-line
           this.errmsg = error.message; // eslint-disable-line
         },
@@ -81,7 +80,7 @@ export class ProductComponent implements OnInit {
           this.statusCode = successCode;
           void this.router.navigate(['products']);
         },
-        (error: any) => {
+        (error: any) => { // eslint-disable-line
           this.statusCode = error.statusCode; // eslint-disable-line
           this.errmsg = error.message; // eslint-disable-line
         },
@@ -90,10 +89,10 @@ export class ProductComponent implements OnInit {
   }
 
   //Image upload
-  @ViewChild('fileInput') fileInput: any;
-  @ViewChild('productImage') productImage: any;
+  @ViewChild('fileInput') fileInput: any; // eslint-disable-line
+  @ViewChild('productImage') productImage: any; // eslint-disable-line
 
-  filechanged(event: any): void {
+  filechanged(event: any): void { // eslint-disable-line
     this.selectedFile = event.target.files[0]; // eslint-disable-line
     this.filename = this.selectedFile.name;
   }
@@ -101,11 +100,11 @@ export class ProductComponent implements OnInit {
   upload(): void {
     if (this.selectedFile) {
       this.service.upload(this.selectedFile).subscribe(
-        (res: any) => {
+        (res: any) => { // eslint-disable-line
           this.productForm.patchValue({ image: res.message }); // eslint-disable-line
           this.productImage.src = res.message; // eslint-disable-line
         },
-        (error: any) => {
+        (error: any) => { // eslint-disable-line
           this.statusCode = error.statusCode; // eslint-disable-line
           this.errmsg = error.message; // eslint-disable-line
         },

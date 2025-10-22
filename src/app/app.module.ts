@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -15,17 +15,10 @@ import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './product/products.component';
 import { ErrorInterceptorProvider } from './http.interceptor';
 
-@NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, ProductComponent, ProductsComponent],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AlertModule.forRoot(),
-    AppRoutingModule,
-  ],
-  providers: [ProductService, ErrorInterceptorProvider],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, ProductComponent, ProductsComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        AlertModule.forRoot(),
+        AppRoutingModule], providers: [ProductService, ErrorInterceptorProvider, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}

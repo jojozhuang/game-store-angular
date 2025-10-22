@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ProductService } from '../product.service';
@@ -11,10 +11,10 @@ describe('ProductsComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientModule],
-        providers: [ProductService],
-        declarations: [ProductsComponent],
-      }).compileComponents();
+    declarations: [ProductsComponent],
+    imports: [],
+    providers: [ProductService, provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
     }),
   );
 

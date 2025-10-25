@@ -30,7 +30,6 @@
     "@angular/platform-browser-dynamic": "20.3.6",
     "@angular/router": "20.3.6",
     "bootstrap": "4.6.2",
-    "express": "4.18.2",
     "ngx-bootstrap": "20.0.2",
     "rxjs": "7.8.0",
     "zone.js": "0.15.1"
@@ -48,6 +47,7 @@
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "express": "4.18.2",
     "jasmine-core": "~5.1.1",
     "jasmine-spec-reporter": "~7.0.0",
     "karma": "~6.4.2",

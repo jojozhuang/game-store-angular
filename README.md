@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/jojozhuang0911/portfolios/_apis/build/status%2Fjojozhuang.game-store-angular?branchName=main)](https://dev.azure.com/jojozhuang0911/portfolios/_build/latest?definitionId=2&branchName=main) [![Netlify Status](https://api.netlify.com/api/v1/badges/057b208a-32c7-4eaf-b4ef-054018e215fa/deploy-status)](https://app.netlify.com/projects/game-store-angular/deploys)
+
 # Game Store(Angular)
 
 A web app for managing products, built with Angular and RESTful API.

@@ -50,5 +50,5 @@ jobs:
         with:
           app-name: 'game-store-angular2'
           slot-name: 'Production'
-          package: ./dist/browser
+          package: ./browser
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_556317C056E44C9F94BB9261D2080929 }}

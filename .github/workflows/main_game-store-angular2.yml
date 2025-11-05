@@ -26,12 +26,12 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
+          npm run build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: angular-app
+          name: dist
           path: dist
 
   deploy:
@@ -42,7 +42,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: angular-app
+          name: dist
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -50,5 +50,5 @@ jobs:
         with:
           app-name: 'game-store-angular2'
           slot-name: 'Production'
-          package: ./angular-app/browser
+          package: ./dist/browser
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_556317C056E44C9F94BB9261D2080929 }}

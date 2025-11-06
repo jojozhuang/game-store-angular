@@ -1,13 +1,16 @@
+# Azure Static Web Apps CI/CD workflow for Mango Pond: https://mango-pond-0e5b7781e.3.azurestaticapps.net
+# Azure Portal -> Static Web Apps -> game-store-angular4
+
 name: Azure Static Web Apps CI/CD
 
 on:
   push:
     branches:
-      - fix-static-deployment-pipeline
+      - main
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - fix-static-deployment-pipeline
+      - main
 
 jobs:
   build_and_deploy_job:

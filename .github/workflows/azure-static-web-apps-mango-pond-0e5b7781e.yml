@@ -1,8 +1,8 @@
 # Azure Static Web Apps CI/CD workflow for Mango Pond: https://mango-pond-0e5b7781e.3.azurestaticapps.net
 # Azure Portal -> Static Web Apps -> game-store-angular4
-# This file was initially created by Azure when creating a new statci web app in the portal.
+# This file was initially created by Azure when creating a new static web app in the portal.
 
-name: Azure Static Web Apps CI/CD
+name: Azure Static Web Apps CI/CD for Game Store Angular
 
 on:
   push:

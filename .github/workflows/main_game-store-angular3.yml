@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: ./dist/browser
 
   deploy:
     runs-on: ubuntu-latest
@@ -50,5 +50,5 @@ jobs:
         with:
           app-name: 'game-store-angular3'
           slot-name: 'Production'
-          package: ./dist
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C1983EBE143426C99098E83CC8CBEC0 }}

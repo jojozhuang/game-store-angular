@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - game-store-angular3
 on:
   push:
     branches:
-      - update-api-url-for-azure-deployment
+      - main
   workflow_dispatch:
 
 jobs:

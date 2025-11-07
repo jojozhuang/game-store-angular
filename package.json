@@ -12,6 +12,7 @@
     "build": "ng build --configuration production",
     "build-netlify": "ng build --configuration netlify",
     "build-render": "ng build --configuration render",
+    "build-azure": "ng build --configuration azure",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",

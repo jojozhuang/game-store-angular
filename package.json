@@ -20,7 +20,8 @@
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "test-coverage": "ng test --karma-config=karma.conf.js --no-watch --code-coverage",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "e2e": "npx cypress open"
+    "e2e": "npx cypress open",
+    "e2e:headless": "npx cypress run"
   },
   "private": true,
   "dependencies": {

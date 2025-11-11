@@ -131,23 +131,28 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "port": 12080,
-              "host": "localhost",
-              "buildTarget": "game-store-angular:build:production"
-            },
-            "development": {
-              "port": 12080,
-              "host": "localhost",
-              "buildTarget": "game-store-angular:build:development"
-            }
+          "options": {
+            "port": 12080,
+            "buildTarget": "game-store-angular:build"
           },
-          "defaultConfiguration": "development"
+          "configurations": {
+            "azure": {
+              "buildTarget": "game-store-angular:build:azure"
+            },
+            "netlify": {
+              "buildTarget": "game-store-angular:build:netlify"
+            },
+            "render": {
+              "buildTarget": "game-store-angular:build:render"
+            },
+            "production": {
+              "buildTarget": "game-store-angular:build:production"
+            }
+          }
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n",

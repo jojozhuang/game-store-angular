@@ -6,7 +6,7 @@ name: Deploy to Azure game-store-angular
 on:
   push:
     branches:
-      - fix-deployment-to-game-store
+      - main
   workflow_dispatch:
 
 jobs:

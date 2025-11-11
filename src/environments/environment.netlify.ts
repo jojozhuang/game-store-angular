@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   envName: 'Netlify',
-  apiUrl: 'https://game-store-springboot.onrender.com/',
+  apiUrl: 'https://gamestore-api.azurewebsites.net/',
 };

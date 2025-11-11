@@ -2,7 +2,7 @@
 # Azure Portal -> Static Web Apps -> game-store-angular4
 # This file was initially created by Azure when creating a new static web app in the portal.
 
-name: Azure Static Web Apps CI/CD for Game Store Angular
+name: Deploy to Azure Static Web Apps
 
 on:
   push:

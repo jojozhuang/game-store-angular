@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main   # ⬅️ runs only when PRs are merged into main
+      - deploy-to-github-pages
 
 jobs:
   build-and-deploy:

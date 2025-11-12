@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - merge-deployment-jobs
+  workflow_dispatch:
 
 jobs:
   build_and_deploy_job:

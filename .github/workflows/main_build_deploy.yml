@@ -109,15 +109,28 @@ jobs:
           name: node-app
           path: ./dist/browser
 
-      - name: Deploy to Azure Static Apps
+      - name: Install OIDC Client from Core Package
+        run: npm install @actions/core@1.6.0 @actions/http-client
+
+      - name: Get Id Token
+        uses: actions/github-script@v6
+        id: idtoken
+        with:
+          script: |
+            const coredemo = require('@actions/core')
+            return await coredemo.getIDToken()
+          result-encoding: string
+
+      - name: Build And Deploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_POND_0E5B7781E }}
           action: "upload"
-          app_location: "/"              # Path to app source
-          api_location: ""               # Path to API if any
-          output_location: "dist/browser" # Use downloaded artifact
-          skip_app_build: true            # Prevent rebuild
+          app_location: "/"
+          api_location: ""
+          output_location: "dist/browser"
+          github_id_token: ${{ steps.idtoken.outputs.result }}
+          skip_app_build: true
 
   deploy-github-pages:
     name: Deploy to GitHub Pages

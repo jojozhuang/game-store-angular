@@ -61,6 +61,27 @@
               ],
               "outputHashing": "all"
             },
+            "azure": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.azure.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "netlify": {
               "budgets": [
                 {
@@ -103,7 +124,7 @@
               ],
               "outputHashing": "all"
             },
-            "azure": {
+            "pages": {
               "budgets": [
                 {
                   "type": "initial",
@@ -119,7 +140,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.azure.ts"
+                  "with": "src/environments/environment.pages.ts"
                 }
               ],
               "outputHashing": "all"

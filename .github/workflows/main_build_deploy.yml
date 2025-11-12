@@ -66,8 +66,14 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C1983EBE143426C99098E83CC8CBEC0 }}
           clean: true
 
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular app
+        run: npm run build -- --configuration pages --base-href "https://jojozhuang.github.io/game-store-angular/"
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: ../dist/browser
+          folder: dist/browser

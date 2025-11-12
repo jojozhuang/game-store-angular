@@ -46,7 +46,7 @@ jobs:
         with:
           name: node-app
 
-      - name: 'Deploy to Azure Web App'
+      - name: 'Deploy to Azure game-store-angular'
         id: deploy-to-game1
         uses: azure/webapps-deploy@v3
         with:
@@ -65,3 +65,9 @@ jobs:
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C1983EBE143426C99098E83CC8CBEC0 }}
           clean: true
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist/browser

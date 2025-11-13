@@ -114,6 +114,9 @@ jobs:
         run: |
           sed -i 's|<base href="/">|<base href="/game-store-angular/">|' ./index.html
 
+      - name: List files to be deployed
+        run: ls -la
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:

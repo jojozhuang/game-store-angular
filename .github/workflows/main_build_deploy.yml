@@ -109,10 +109,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
+          path: ./dist/browser
 
       - name: Adjust base href for GitHub Pages
         run: |
-          sed -i 's|<base href="/">|<base href="/game-store-angular/">|' ./index.html
+          sed -i 's|<base href="/">|<base href="/game-store-angular/">|' ./dist/browser/index.html
 
       - name: List files to be deployed
         run: ls -la
@@ -121,5 +122,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: .
+          folder: dist/browser
           clean: true

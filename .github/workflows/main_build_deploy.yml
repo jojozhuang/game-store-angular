@@ -6,7 +6,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - merge-deployment-jobs
+      - main
   workflow_dispatch:
 
 jobs:
@@ -53,8 +53,8 @@ jobs:
       - name: Run unit tests
         run: npm run test:headless
 
-      # - name: Run e2e tests
-      #   run: npm run e2e:headless
+      - name: Run e2e tests
+        run: npm run e2e:headless
 
   deploy-azure-game-store:
     name: Deploy to Azure game-1

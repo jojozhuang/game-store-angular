@@ -125,7 +125,6 @@
               "outputHashing": "all"
             },
             "pages": {
-              "baseHref": "/game-store-angular/",
               "budgets": [
                 {
                   "type": "initial",

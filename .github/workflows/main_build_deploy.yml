@@ -117,6 +117,10 @@ jobs:
           name: node-app
           path: ./dist/browser
 
+      - name: Adjust base href for GitHub Pages
+        run: |
+          sed -i 's|<base href="/">|<base href="/game-store-angular/">|' ./dist/browser/index.html
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:

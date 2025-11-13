@@ -62,8 +62,8 @@ jobs:
       - name: Run e2e tests
         run: npm run e2e:headless
 
-  deploy-azure:
-    name: Deploy to Azure Web Apps
+  deploy-azure-game-store:
+    name: Deploy to Azure game-store-angular
     runs-on: ubuntu-latest
     needs: test
     steps:
@@ -82,6 +82,17 @@ jobs:
           package: ./dist/browser
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6D3CF3B69E8A4BBE85B5CC353EA6FF4E }}
           clean: true
+
+  deploy-azure-game-store3:
+    name: Deploy to Azure game-store-angular3
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: node-app
+          path: ./dist/browser
 
       - name: Deploy to Azure game-store-angular3
         id: deploy-to-game3

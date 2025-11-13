@@ -63,7 +63,7 @@ jobs:
         run: npm run e2e:headless
 
   deploy-azure-game-store:
-    name: Deploy to Azure game-store-angular
+    name: Deploy to Azure game-1
     runs-on: ubuntu-latest
     needs: test
     steps:
@@ -84,7 +84,7 @@ jobs:
           clean: true
 
   deploy-azure-game-store3:
-    name: Deploy to Azure game-store-angular3
+    name: Deploy to Azure game-3
     runs-on: ubuntu-latest
     needs: test
     steps:

@@ -51,7 +51,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-          path: ./dist/browser
 
       - name: Install dependencies
         run: npm ci
@@ -71,7 +70,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-          path: ./dist/browser
 
       - name: Deploy to Azure game-store-angular
         id: deploy-to-game1
@@ -79,7 +77,7 @@ jobs:
         with:
           app-name: 'game-store-angular'
           slot-name: 'Production'
-          package: ./dist/browser
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6D3CF3B69E8A4BBE85B5CC353EA6FF4E }}
           clean: true
 
@@ -92,7 +90,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-          path: ./dist/browser
 
       - name: Deploy to Azure game-store-angular3
         id: deploy-to-game3
@@ -100,7 +97,7 @@ jobs:
         with:
           app-name: 'game-store-angular3'
           slot-name: 'Production'
-          package: ./dist/browser
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C1983EBE143426C99098E83CC8CBEC0 }}
           clean: true
 
@@ -115,7 +112,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-          path: ./dist/browser
 
       - name: Adjust base href for GitHub Pages
         run: |

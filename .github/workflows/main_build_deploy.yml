@@ -6,7 +6,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - fix-page-refres-not-found
+      - main
   workflow_dispatch:
 
 jobs:

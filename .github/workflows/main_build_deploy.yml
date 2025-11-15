@@ -6,7 +6,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main
+      - add-delay-to-e2e
   workflow_dispatch:
 
 jobs:

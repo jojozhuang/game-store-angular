@@ -16,7 +16,7 @@
     "build:azure": "ng build --configuration azure",
     "build:netlify": "ng build --configuration netlify",
     "build:render": "ng build --configuration render",
-    "build:pages": "ng build --configuration pages --base-href 'https://jojozhuang.github.io/game-store-angular/'",
+    "build:pages": "ng build --configuration pages",
     "test": "ng test",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "test:coverage": "ng test --karma-config=karma.conf.js --no-watch --code-coverage",

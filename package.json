@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@angular/build": "^20.3.6",
-    "@angular/cli": "20.3.6",
+    "@angular/cli": "20.3.13",
     "@angular/compiler-cli": "20.3.6",
     "@cypress/schematic": "2.4.0",
     "@eslint/eslintrc": "^3.3.1",
